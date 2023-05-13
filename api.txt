@@ -1,0 +1,20 @@
+1) register :
+  http://localhost:5000/api/Persons/register
+	    {
+    "userName":"usaqwqwssa",
+    "firstName":"zyad",
+    "fatherName":"Mohamed",
+    "familyName":"Amin",
+    "address":"zahraa el maadi",
+    "birthdate":"19/11/1999",
+    "password":"123456Zyadamin"
+}
+
+
+2)resetpassword:
+ http://localhost:5000/api/Persons/resetpassword
+   {
+    "userName":"usaqwqwsssa",
+    "password":"anaamen",
+    "newPassword":"a"
+}
