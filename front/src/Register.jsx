@@ -10,6 +10,9 @@ export const Register = (props) => {
     const [familyName, setFamilyName] = useState('');
     const [address, setAddress] = useState('');
     const [birthdate, setBirthdate] = useState('');
+    const [res, setRes] = useState('');
+
+    
 
     const navigate = useNavigate();
 
@@ -28,13 +31,12 @@ export const Register = (props) => {
           .then(function (response) {
             console.log(response);
             console.log(response.data)
-            navigate("/User", { state: 
-                { userName: response.data.userName,
-                 firstName: response.data.firstName,
-                 fatherName:response.data.fatherName,
-                 familyName:response.data.familyName,
-                 address:response.data.address,
-                 birthdate:response.data.birthdate } });
+
+            setRes(response.data.message);
+            if(response.data.success){
+                navigate("/");
+            }
+            
             
         }).catch(function (error) {
             console.log(error);
@@ -49,6 +51,7 @@ export const Register = (props) => {
     return (
         <div className="auth-form-container">
             <h2>Register</h2>
+            <div className="response">{res}</div>
         <form className="register-form" onSubmit={handleSubmit}>
             <label htmlFor="firstName">First Name</label>
             <input value={firstName} name="firstName" onChange={(e) => setFirtsName(e.target.value)} id="firstName" placeholder="First Name" />

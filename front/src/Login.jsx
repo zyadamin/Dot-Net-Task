@@ -6,8 +6,8 @@ export const Login = (props) => {
 
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    const [res, setRes] = useState('');
     const navigate = useNavigate();
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -17,14 +17,20 @@ export const Login = (props) => {
                 "password": pass,
               })
               .then(function (response) {
+                
+                setRes(response.data.message);
                 console.log(response);
                 console.log(response.data)
-                navigate("/User", { state: { userName: response.data.userName,
-                                             firstName: response.data.firstName,
-                                             fatherName:response.data.fatherName,
-                                             familyName:response.data.familyName,
-                                             address:response.data.address,
-                                             birthdate:response.data.birthdate } });
+                if(response.data.success){
+
+                    navigate("/User", { state: { userName: response.data.data.userName,
+                        firstName: response.data.data.firstName,
+                        fatherName:response.data.data.fatherName,
+                        familyName:response.data.data.familyName,
+                        address:response.data.data.address,
+                        birthdate:response.data.data.birthdate } });
+
+                }
                 
             })
               .catch(function (error) {
@@ -42,6 +48,7 @@ export const Login = (props) => {
         <div className="auth-form-container">
             <h2>Login</h2>
             <form className="login-form" onSubmit={handleSubmit}>
+                <div className="response">{res}</div>
                 <label htmlFor="email">email</label>
                 <input value={email} onChange={(e) => setEmail(e.target.value)}type="text" placeholder="youremail@gmail.com" id="email" name="email" />
                 <label htmlFor="password">password</label>

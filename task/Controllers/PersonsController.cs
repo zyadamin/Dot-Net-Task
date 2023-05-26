@@ -1,10 +1,6 @@
-﻿
-using System;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using task.Data;
 using task.Models;
 
@@ -15,46 +11,31 @@ namespace task.Controllers
     public class PersonsController : ControllerBase
     {
         private readonly IAuthRepository _repo;
-        public PersonsController(IAuthRepository repo)
+        private readonly ILogger<PersonsController> logger;
+        public PersonsController(IAuthRepository repo, ILogger<PersonsController> logger)
         {
+            this.logger = logger;
             _repo = repo;
         }
 
-         [HttpPost("retrieve")]
-        public async Task<IActionResult> retrieveData([FromBody] Person person){
-
-                var user=await _repo.retrieveUserData(person);
-                if(user!=null){
-
-                    return Ok(user);
-                }
-                return  BadRequest("userExisting");
-        
+        [HttpPost("retrieve")]
+        public async Task<Response> retrieveData([FromBody] userLogin person)
+        {
+            return await _repo.retrieveUserData(person);
         }
-            
 
-        // POST api/values
+
+        // POST api/register
         [HttpPost("register")]
-        public async Task<IActionResult> register([FromBody] Person person)
-        {       
-            //validation 
-                var user=await _repo.register(person);
-                if(user!=null){
-
-                    return Ok(user);
-                }
-                return  BadRequest("userExisting");
-                 
+        public async Task<Response> register([FromBody] Person person)
+        {
+            return await _repo.register(person);
         }
-       
-        [HttpPut("resetpassword")]
-        public async Task<IActionResult> resetPassword([FromBody] Person person){
 
-            var done=await _repo.resetUserPassword(person);
-            if(done){
-                    return StatusCode(201);
-            }
-            return  BadRequest("wrongPassword");
+        [HttpPut("resetpassword")]
+        public async Task<Response> resetPassword([FromBody] passwordReset person)
+        {
+            return await _repo.resetUserPassword(person);
         }
 
     }

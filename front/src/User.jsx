@@ -22,7 +22,7 @@ export const User = (props) => {
                 <h1>{address}</h1>
                 <h1>{birthdate}</h1>
 
-                <button type="submit">Reste</button>
+                <button type="submit">Reset</button>
             </form>
         </div>
     )

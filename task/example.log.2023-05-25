@@ -1,0 +1,40 @@
+2023-05-25 23:27:12,917  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 PUT http://localhost:5000/api/Persons/retrieve application/json 74
+ 2023-05-25 23:27:13,017  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 103.5047ms 404 
+ 2023-05-25 23:27:13,024  INFO Microsoft.AspNetCore.Server.Kestrel.? [?] - MESSAGE: Connection id "0HMQTBPM53DJ6", Request id "0HMQTBPM53DJ6:00000001": the application completed without reading the entire request body.
+ 2023-05-25 23:27:18,814  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST http://localhost:5000/api/Persons/retrieve application/json 74
+ 2023-05-25 23:27:18,831  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "retrieveData", controller = "Persons"}. Executing action task.Controllers.PersonsController.retrieveData (task)
+ 2023-05-25 23:27:18,937  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method task.Controllers.PersonsController.retrieveData (task) with arguments (task.Models.Person) - Validation state: Valid
+ 2023-05-25 23:27:19,024  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 2.1.4-rtm-31024 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2023-05-25 23:27:19,150  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (7ms) [Parameters=[@__person_userName_0='?' (Size = 250)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[id], [x].[address], [x].[birthdate], [x].[familyName], [x].[fatherName], [x].[firstName], [x].[newPassword], [x].[password], [x].[userName]
+FROM [Persons] AS [x]
+WHERE [x].[userName] = @__person_userName_0
+ 2023-05-25 23:27:19,192  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method task.Controllers.PersonsController.retrieveData (task), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 251.9944ms.
+ 2023-05-25 23:27:19,198  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'task.Models.Person'.
+ 2023-05-25 23:27:19,209  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action task.Controllers.PersonsController.retrieveData (task) in 375.3356ms
+ 2023-05-25 23:27:19,215  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 400.4694ms 200 application/json; charset=utf-8
+ 2023-05-25 23:29:21,919  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST http://localhost:5000/api/Persons/retrieve application/json 74
+ 2023-05-25 23:29:21,921  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "retrieveData", controller = "Persons"}. Executing action task.Controllers.PersonsController.retrieveData (task)
+ 2023-05-25 23:29:21,923  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method task.Controllers.PersonsController.retrieveData (task) with arguments (task.Models.Person) - Validation state: Valid
+ 2023-05-25 23:29:21,924  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 2.1.4-rtm-31024 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2023-05-25 23:29:21,931  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (5ms) [Parameters=[@__person_userName_0='?' (Size = 250)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[id], [x].[address], [x].[birthdate], [x].[familyName], [x].[fatherName], [x].[firstName], [x].[newPassword], [x].[password], [x].[userName]
+FROM [Persons] AS [x]
+WHERE [x].[userName] = @__person_userName_0
+ 2023-05-25 23:29:21,934  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method task.Controllers.PersonsController.retrieveData (task), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 10.5108ms.
+ 2023-05-25 23:29:21,936  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'task.Models.Person'.
+ 2023-05-25 23:29:21,937  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action task.Controllers.PersonsController.retrieveData (task) in 15.4196ms
+ 2023-05-25 23:29:21,938  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 19.2639ms 200 application/json; charset=utf-8
+ 2023-05-25 23:31:20,427  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST http://localhost:5000/api/Persons/retrieve application/json 74
+ 2023-05-25 23:31:20,533  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "retrieveData", controller = "Persons"}. Executing action task.Controllers.PersonsController.retrieveData (task)
+ 2023-05-25 23:31:20,623  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method task.Controllers.PersonsController.retrieveData (task) with arguments (task.Models.Person) - Validation state: Valid
+ 2023-05-25 23:31:20,712  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 2.1.4-rtm-31024 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2023-05-25 23:31:20,850  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (9ms) [Parameters=[@__person_userName_0='?' (Size = 250)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[id], [x].[address], [x].[birthdate], [x].[familyName], [x].[fatherName], [x].[firstName], [x].[newPassword], [x].[password], [x].[userName]
+FROM [Persons] AS [x]
+WHERE [x].[userName] = @__person_userName_0
+ 2023-05-25 23:31:20,908  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method task.Controllers.PersonsController.retrieveData (task), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 282.4571ms.
+ 2023-05-25 23:31:20,916  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'task.Models.Person'.
+ 2023-05-25 23:31:20,928  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action task.Controllers.PersonsController.retrieveData (task) in 392.7119ms
+ 2023-05-25 23:31:20,936  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 510.7741ms 200 application/json; charset=utf-8
+ 

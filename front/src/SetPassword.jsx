@@ -6,6 +6,7 @@ export const Reset = (props) => {
     
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
+    const [res, setRes] = useState('');
     const {state} = useLocation();
     const {userName} = state; // Read values passed on state
 
@@ -17,16 +18,29 @@ export const Reset = (props) => {
 
         const article = {
             "userName":userName ,
-            "password": oldPassword,
+            "oldpassword": oldPassword,
             "newPassword":newPassword
     };
-        axios.put('http://localhost:5000/api/Persons/resetpassword', article);
-        navigate("/");
+        axios.put('http://localhost:5000/api/Persons/resetpassword', article).then(function (response) {
+            console.log(response);
+            console.log(response.data)
+
+            setRes(response.data.message);
+
+            if(response.data.success){
+                navigate("/");
+            }
+            
+            
+        }).catch(function (error) {
+            console.log(error);
+          })
         }
 
     return (
         <div className="auth-form-container">
             <h2>Reset Password</h2>
+            <div className="response">{res}</div>
             <form className="Reset-form" onSubmit={handleSubmit}>
                 <label htmlFor="oldPassword">OldPassword</label>
                 <input value={oldPassword} onChange={(e) => setOldPassword(e.target.value)} type="password" placeholder="*********" id="oldPassword" name="oldPassword" />

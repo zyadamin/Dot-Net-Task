@@ -5,9 +5,9 @@ namespace task.Data
 {
     public interface IAuthRepository
     {
-         Task<Person> register(Person person);
-         Task<bool> resetUserPassword(Person person);
-         Task<Person> retrieveUserData(Person person);
+         Task<Response> register(Person person);
+         Task<Response> resetUserPassword(passwordReset person );
+         Task<Response> retrieveUserData(userLogin Person);
          
     }
 
