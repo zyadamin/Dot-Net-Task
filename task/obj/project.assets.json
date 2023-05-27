@@ -13008,11 +13008,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\task\\task.csproj",
+      "projectUniqueName": "C:\\Users\\zyad\\Desktop\\task upload\\task\\task.csproj",
       "projectName": "task",
-      "projectPath": "D:\\task\\task.csproj",
+      "projectPath": "C:\\Users\\zyad\\Desktop\\task upload\\task\\task.csproj",
       "packagesPath": "C:\\Users\\zyad\\.nuget\\packages\\",
-      "outputPath": "D:\\task\\obj\\",
+      "outputPath": "C:\\Users\\zyad\\Desktop\\task upload\\task\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
